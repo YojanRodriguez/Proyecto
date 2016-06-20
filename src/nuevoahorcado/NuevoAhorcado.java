@@ -7,13 +7,13 @@ package nuevoahorcado;
 
 /**
  *
- * @author Familia
+ * @author Yojan Rodriguez
  */
+import java.util.Scanner;
+import java.util.Random;
 public class NuevoAhorcado {
 
-    /**
-     * @param args the command line arguments
-     */
+    
     public static void main(String[] args) {
         // TODO code application logic here
     }
