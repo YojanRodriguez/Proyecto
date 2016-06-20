@@ -12,7 +12,15 @@ package nuevoahorcado;
 import java.util.Scanner;
 import java.util.Random;
 public class NuevoAhorcado {
-
+                    //Inicio de todo lo programado
+    public NuevoAhorcado(){
+        
+        Scanner deteccion = new Scanner(System.in);
+        
+        
+        
+    }
+    
     
     public static void main(String[] args) {
         // TODO code application logic here
