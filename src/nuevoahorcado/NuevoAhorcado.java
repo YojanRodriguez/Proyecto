@@ -11,36 +11,44 @@ package nuevoahorcado;
  */
 import java.util.Scanner;
 import java.util.Random;
+import javax.swing.JOptionPane;
 
 public class NuevoAhorcado {
-
-    //Inicio de todo lo programado
+    
+     //Inicio de todo lo programado
     public static void main(String[] args) {
         // TODO code application logic here
         int n;
         Scanner leer = new Scanner(System.in);
-
-        System.out.println(" 1) Fácil"
+        //
+        
+        
+        
+        int obcion=Integer.parseInt(JOptionPane.showInputDialog(" 1) Fácil"
                 + "\n 2) Media"
                 + "\n 3) Difícil"
-                + "\nElige una opción:  ");
-        n = leer.nextInt();
+                + "\nElige una opción:  " ));
 
-        switch (n) {
+        switch (obcion) {
             case 1:
-                System.out.println("Has elegido la modalidad Fácil  ");
+                
+                JOptionPane.showMessageDialog(null, "Has elegido la modalidad Fácil  ");
+                             
                 break;
             case 2:
-                System.out.println("Has elegido la modalidad Media  ");
+                JOptionPane.showMessageDialog(null, "Has elegido la modalidad Media  ");
+                
                 break;
             case 3:
-                System.out.println("Has elegido la modalidad Difícil ");
+                JOptionPane.showMessageDialog(null, "Has elegido la modalidad Difícil ");
+                
                 break;
             default:
-                System.out.println("No has elegido una opción del menú  ");
+                 JOptionPane.showMessageDialog(null, "No has elegido una opción del menú  ");
+               
 
         }
-
+ 
     }
 
 }
