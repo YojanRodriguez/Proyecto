@@ -11,19 +11,18 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Yojan Rodriguez
+ * @author Familia
  */
-public class NuevoAhorcado {
-
-    public NuevoAhorcado() {
+public class dificil {
+    public dificil() {
 
         Scanner deteccion = new Scanner(System.in);
 
-        String[] palabrasFacil = {"ana", "ala", "uno", "dos", "luz", "pez", "dia", "sol"};
+        String[] palabrasFacil = {"alharaca","abstencionismo","otorrinolaringologo","aeropuerto","","","","","",""};
         int random1 = 0 + new Random().nextInt(palabrasFacil.length);
         String seleccionada1 = palabrasFacil[random1];//Guardamos la palabra escogida por la pc en una variable
 
-        System.out.println("Esta palabra tiene " + seleccionada1.length() + " letras" + "\n");
+        System.out.println("Esta palabra tiene " + seleccionada1.length() + " letras"+ "\n");
         String[] palabra = new String[seleccionada1.length()];//si se llena todos los espacios de este array es que ha ganado el juego
         imprimirPalabra(palabra);//Mostramos las rayitas
         int vidas = 11;//Contador de vidas
@@ -45,10 +44,8 @@ public class NuevoAhorcado {
                 contador++;
             }
             if (acertoAlguna) {
-
                 JOptionPane.showMessageDialog(null, "Has acertado una letra"
                         + "\n Te quedan " + vidas + " vidas");
-
             } else {
                 vidas--;
                 JOptionPane.showMessageDialog(null, "No has acertado ninguna letra");
@@ -60,16 +57,14 @@ public class NuevoAhorcado {
                     System.out.println("Te quedan " + vidas + " vidas");
                 }
             }
-
+            
             System.out.println("Las letras encontradas son: ");
             imprimirPalabra(palabra);
             contador = -1;
             acertoAlguna = false;
             if (gano(palabra)) {
-
-                JOptionPane.showMessageDialog(null, "Has completado la palabra", "Felicidades", JOptionPane.INFORMATION_MESSAGE);
                 
-                
+                JOptionPane.showMessageDialog(null,"Has completado la palabra","choose one", JOptionPane.INFORMATION_MESSAGE);
                 break;
             }
         }
