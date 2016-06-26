@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Familia
+ * @author Yojan Rodriguez Jimenez
  */
 public class medio {
     public medio() {
@@ -32,13 +32,13 @@ public class medio {
             System.out.println("Escoge una letra");
             String letraElegidaPorUsuario = deteccion.nextLine();
             String[] letras = seleccionada1.split("");
-            int contador = -1;
+            int contador = 0;
 
             boolean acertoAlguna = false;
             //Recorremos cada letra de la palabra para comprobar si hay una igualdad
             for (String letra : letras) {
                 if (letraElegidaPorUsuario.equals(letra)) {
-                    palabra[contador] = letraElegidaPorUsuario;
+                    palabra[contador-1] = letraElegidaPorUsuario;
                     acertoAlguna = true;break;
                 }
                 contador++;
@@ -60,7 +60,7 @@ public class medio {
             
             System.out.println("Las letras encontradas son: ");
             imprimirPalabra(palabra);
-            contador = -1;
+            contador = 0;
             acertoAlguna = false;
             if (gano(palabra)) {
                 

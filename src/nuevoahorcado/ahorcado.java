@@ -9,15 +9,14 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Familia
+ * @author Yojan Rodriguez Jimenez
  */
 public class ahorcado {
 
-//    
     public static void main(String[] args) {
-//        String[] asd = new String[10];
 
-        int opcion = 0; //Variable que utilizo para almacenar la opcion de manú
+
+        int opcion= -1; //Variable que utilizo para almacenar la opcion de manú
 
         try {       //Funciona para buscar errores del bloque de código
 

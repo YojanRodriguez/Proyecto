@@ -11,24 +11,20 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Yojan Rodriguez
+ * @author Yojan Rodriguez Jimenez
  */
 public class facil {
-    
 
     public facil() {
-        
-        
-        
 
         Scanner deteccion = new Scanner(System.in);
 
-        String[] palabrasFacil = {"ana", "ala", "uno", "dos", "luz", "pez", "dia", "sol"};
-        int random1 = 0 + new Random().nextInt(palabrasFacil.length);
-        String seleccionada1 = palabrasFacil[random1];//Guardamos la palabra escogida por la pc en una variable
+        String[] palabrasFacil = {"ana", "ala"};
+        int random1 =new Random().nextInt(palabrasFacil.length);// Escoje una palabra al azar
+        String seleccionada1 = palabrasFacil[random1];//variable que almacena la longitud de la palabra y la palabra
 
         System.out.println("Esta palabra tiene " + seleccionada1.length() + " letras" + "\n");
-        String[] palabra = new String[seleccionada1.length()];//si se llena todos los espacios de este array es que ha ganado el juego
+        String[] palabra = new String[seleccionada1.length()];//si se llena todos los espacios de este arrglo es que ha ganado el juego
         imprimirPalabra(palabra);//Mostramos las rayitas
         int vidas = 11;//Contador de vidas
 
@@ -44,9 +40,10 @@ public class facil {
             for (String letra : letras) {
                 if (letraElegidaPorUsuario.equals(letra)) {
                     palabra[contador-1] = letraElegidaPorUsuario;
+
+                    acertoAlguna = true;
                     
-                    acertoAlguna = true;break;
-                    
+
                 }
                 contador++;
             }
@@ -74,12 +71,9 @@ public class facil {
             if (gano(palabra)) {
 
                 JOptionPane.showMessageDialog(null, "Has completado la palabra", "Felicidades", JOptionPane.INFORMATION_MESSAGE);
-                
-                
+
                 break;
-                
-                
-                
+
             }
         }
     }
@@ -88,10 +82,11 @@ public class facil {
         //Este metodo imprime las letras que ha acertado el usuario hasta el momento.
         for (String letra : palabra) {
             if (letra != null) {
-                System.out.print(letra + " "); //Imprime las letras + un espacio
+                System.out.print(letra+ " "); //Imprime las letras + un espacio
             } else {
                 System.out.print(" _ ");  //Imprime las rallitas + un espacio
             }
+            
         }
         System.out.println("");
     }
@@ -108,6 +103,5 @@ public class facil {
 
         return gano;
     }
-    
 
 }
