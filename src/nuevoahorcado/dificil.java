@@ -14,11 +14,12 @@ import javax.swing.JOptionPane;
  * @author Familia
  */
 public class dificil {
+    
     public dificil() {
 
         Scanner deteccion = new Scanner(System.in);
 
-        String[] palabrasFacil = {"alharaca","abstencionismo","otorrinolaringologo","aeropuerto","","","","","",""};
+        String[] palabrasFacil = {"alharaca","abstencionismo","otorrinolaringologo","aeropuerto"};
         int random1 = 0 + new Random().nextInt(palabrasFacil.length);
         String seleccionada1 = palabrasFacil[random1];//Guardamos la palabra escogida por la pc en una variable
 
@@ -39,7 +40,9 @@ public class dificil {
             for (String letra : letras) {
                 if (letraElegidaPorUsuario.equals(letra)) {
                     palabra[contador] = letraElegidaPorUsuario;
+                   
                     acertoAlguna = true;
+                    break;
                 }
                 contador++;
             }

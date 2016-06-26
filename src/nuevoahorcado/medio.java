@@ -39,7 +39,7 @@ public class medio {
             for (String letra : letras) {
                 if (letraElegidaPorUsuario.equals(letra)) {
                     palabra[contador] = letraElegidaPorUsuario;
-                    acertoAlguna = true;
+                    acertoAlguna = true;break;
                 }
                 contador++;
             }
