@@ -13,10 +13,10 @@ import javax.swing.JOptionPane;
  *
  * @author Yojan Rodriguez
  */
-public class NuevoAhorcado {
+public class facil {
     
 
-    public NuevoAhorcado() {
+    public facil() {
         
         
         
