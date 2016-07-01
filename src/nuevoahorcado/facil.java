@@ -15,12 +15,15 @@ import javax.swing.JOptionPane;
  */
 public class facil {
 
+    /**
+     *
+     */
     public facil() {
 
         Scanner deteccion = new Scanner(System.in);
-
-        String[] palabrasFacil = {"ana", "ala"};
-        int random1 =new Random().nextInt(palabrasFacil.length);// Escoje una palabra al azar
+                        //arreglo lleno
+        String[] palabrasFacil = {"ana", "ala","uno","año","fin","dos","sol"};
+        int random1 = new Random().nextInt(palabrasFacil.length);// Escoje una palabra al azar
         String seleccionada1 = palabrasFacil[random1];//variable que almacena la longitud de la palabra y la palabra
 
         System.out.println("Esta palabra tiene " + seleccionada1.length() + " letras" + "\n");
@@ -39,10 +42,9 @@ public class facil {
             //Recorremos cada letra de la palabra para comprobar si hay una igualdad
             for (String letra : letras) {
                 if (letraElegidaPorUsuario.equals(letra)) {
-                    palabra[contador-1] = letraElegidaPorUsuario;
+                    palabra[contador - 1] = letraElegidaPorUsuario;
 
                     acertoAlguna = true;
-                    
 
                 }
                 contador++;
@@ -57,7 +59,7 @@ public class facil {
                 JOptionPane.showMessageDialog(null, "No has acertado ninguna letra");
                 System.out.println();
                 if (vidas == 0) {
-                    JOptionPane.showMessageDialog(null, "Se te acabaron las vidas, quedas ahorcado x(");
+                    JOptionPane.showMessageDialog(null, "SE A TERMINADO LA PARTIDA  ╥﹏╥ ", "PERDISTE",JOptionPane.ERROR_MESSAGE);
                     break;
                 } else {
                     System.out.println("Te quedan " + vidas + " vidas");
@@ -68,7 +70,7 @@ public class facil {
             imprimirPalabra(palabra);
             contador = 0;
             acertoAlguna = false;
-            if (gano(palabra)) {
+            if (fin(palabra)) {
 
                 JOptionPane.showMessageDialog(null, "Has completado la palabra", "Felicidades", JOptionPane.INFORMATION_MESSAGE);
 
@@ -78,30 +80,39 @@ public class facil {
         }
     }
 
+    /**
+     *
+     * @param palabra
+     */
     public void imprimirPalabra(String[] palabra) {
         //Este metodo imprime las letras que ha acertado el usuario hasta el momento.
         for (String letra : palabra) {
             if (letra != null) {
-                System.out.print(letra+ " "); //Imprime las letras + un espacio
+                System.out.print(letra + " "); //Imprime las letras + un espacio
             } else {
                 System.out.print(" _ ");  //Imprime las rallitas + un espacio
             }
-            
+
         }
         System.out.println("");
     }
 
-    public boolean gano(String[] palabra) {
-        boolean gano = true;
+    /**
+     *
+     * @param palabra
+     * @return
+     */
+    public boolean fin(String[] palabra) {
+        boolean fin = true;
 
         for (String letra : palabra) {
             if (letra == null) {
-                gano = false;
+                fin = false;
                 break;
             }
         }
 
-        return gano;
+        return fin;
     }
 
 }

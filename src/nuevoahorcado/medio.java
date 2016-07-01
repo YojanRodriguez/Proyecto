@@ -14,15 +14,19 @@ import javax.swing.JOptionPane;
  * @author Yojan Rodriguez Jimenez
  */
 public class medio {
-    public medio() {
 
+    /**
+     *
+     */
+    public medio() {
+                                //arreglo lleno
         Scanner deteccion = new Scanner(System.in);
 
-        String[] palabrasFacil = {"carro","perro","ciudad","peces","moneda","lapiz","truco","arroz","pepino","luces","camaron"};
-        int random1 = 0 + new Random().nextInt(palabrasFacil.length);
-        String seleccionada1 = palabrasFacil[random1];//Guardamos la palabra escogida por la pc en una variable
+        String[] palabrasMedia = {"carro", "perro", "ciudad","peces","moto","tela","cruz"};
+        int random1 = new Random().nextInt(palabrasMedia.length);
+        String seleccionada1 = palabrasMedia[random1];//Guardamos la palabra escogida por la pc en una variable
 
-        System.out.println("Esta palabra tiene " + seleccionada1.length() + " letras"+ "\n");
+        System.out.println("Esta palabra tiene " + seleccionada1.length() + " letras" + "\n");
         String[] palabra = new String[seleccionada1.length()];//si se llena todos los espacios de este array es que ha ganado el juego
         imprimirPalabra(palabra);//Mostramos las rayitas
         int vidas = 11;//Contador de vidas
@@ -38,8 +42,9 @@ public class medio {
             //Recorremos cada letra de la palabra para comprobar si hay una igualdad
             for (String letra : letras) {
                 if (letraElegidaPorUsuario.equals(letra)) {
-                    palabra[contador-1] = letraElegidaPorUsuario;
-                    acertoAlguna = true;break;
+                    palabra[contador - 1] = letraElegidaPorUsuario;
+                    acertoAlguna = true;
+                    
                 }
                 contador++;
             }
@@ -51,25 +56,29 @@ public class medio {
                 JOptionPane.showMessageDialog(null, "No has acertado ninguna letra");
                 System.out.println();
                 if (vidas == 0) {
-                    JOptionPane.showMessageDialog(null, "Se te acabaron las vidas, quedas ahorcado x(");
+                    JOptionPane.showMessageDialog(null, "SE A TERMINADO LA PARTIDA  ╥﹏╥ ", "PERDISTE",JOptionPane.ERROR_MESSAGE);
                     break;
                 } else {
                     System.out.println("Te quedan " + vidas + " vidas");
                 }
             }
-            
+
             System.out.println("Las letras encontradas son: ");
             imprimirPalabra(palabra);
             contador = 0;
             acertoAlguna = false;
-            if (gano(palabra)) {
-                
-                JOptionPane.showMessageDialog(null,"Has completado la palabra","choose one", JOptionPane.INFORMATION_MESSAGE);
+            if (fin(palabra)) {
+
+                JOptionPane.showMessageDialog(null, "Has completado la palabra", "WINNER", JOptionPane.INFORMATION_MESSAGE);
                 break;
             }
         }
     }
 
+    /**
+     *
+     * @param palabra
+     */
     public void imprimirPalabra(String[] palabra) {
         //Este metodo imprime las letras que ha acertado el usuario hasta el momento.
         for (String letra : palabra) {
@@ -82,17 +91,22 @@ public class medio {
         System.out.println("");
     }
 
-    public boolean gano(String[] palabra) {
-        boolean gano = true;
+    /**
+     *
+     * @param palabra
+     * @return
+     */
+    public boolean fin(String[] palabra) {
+        boolean fin = true;
 
         for (String letra : palabra) {
             if (letra == null) {
-                gano = false;
+                fin = false;
                 break;
             }
         }
 
-        return gano;
+        return fin;
     }
 
 }

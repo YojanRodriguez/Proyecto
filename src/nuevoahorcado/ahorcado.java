@@ -5,6 +5,7 @@
  */
 package nuevoahorcado;
 
+import java.awt.HeadlessException;
 import javax.swing.JOptionPane;
 
 /**
@@ -13,10 +14,14 @@ import javax.swing.JOptionPane;
  */
 public class ahorcado {
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
 
 
-        int opcion= -1; //Variable que utilizo para almacenar la opcion de manú
+        int opcion= 0; //Variable que utilizo para almacenar la opcion de manú
 
         try {       //Funciona para buscar errores del bloque de código
 
@@ -29,7 +34,8 @@ public class ahorcado {
                         + "\n 3)-Dificil"                                                 //           //
                         + "\n 4)-Salir\n"                                                 //           //
                         + "\n Digite un nùmero: "));                                      ///////////////
-
+                            
+              
                 switch (opcion) {
 
                     case 1:             //las opciones de menú facil
@@ -40,6 +46,7 @@ public class ahorcado {
                         if (opcion < 2) {
 
                             facil salida = new facil();  // Llamas la clase facil
+                            
                             break;
                         } else {
                             break;
@@ -73,11 +80,11 @@ public class ahorcado {
                 }
                 JOptionPane.showMessageDialog(null, "Volviendo al menú", "Continuar...", JOptionPane.WARNING_MESSAGE);//MENSAJE PARA EXPLICAR LO QUE SUCEDE
             }
-        } catch (Exception e) { //Catch ya se encontro el error por lo tanto el programa ingresa a esta opcion y te muestra un mensaje 
+            
+        } catch (HeadlessException | NumberFormatException e) { //Catch ya se encontro el error por lo tanto el programa ingresa a esta opcion y te muestra un mensaje 
             //Y te saca del programa
 
             JOptionPane.showMessageDialog(null, "Uoop! Error!", "OOhhhh", JOptionPane.ERROR_MESSAGE); //MENSAJE PARA EXPLICAR LO QUE SUCEDE
-
         }
     }
 }
